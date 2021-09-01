@@ -1,0 +1,21 @@
+body {
+  background-color: rgba(240, 245, 239, 0.946);
+}
+.content {
+  max-width: 500px;
+  border-radius: 10px;
+  margin: auto;
+  background-color: rgb(227, 242, 227);
+  padding: 2% 2%;
+}
+button {
+  background-color: rgb(41, 44, 41);
+  color: white;
+}
+
+button:hover {
+  color: rgb(204, 199, 199);
+}
+.error {
+  color: brown;
+}

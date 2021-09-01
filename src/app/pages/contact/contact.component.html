@@ -1,0 +1,63 @@
+<div class="container mt-5">
+	<div>
+		<p class="text-center">
+			Suscríbete a nuestra newsletter para recibir todas nuestras noticias y trucos para contribuir a
+			tener un planeta más limpio.
+			Además te enviaremos un cupón con el 5% de descuento para tu primer pedido
+		</p>
+	</div>
+	<form class="content" [formGroup]="form" novalidate (ngSubmit)=save($event)>
+		<h3 class="display-5 text-center">Suscríbete</h3>
+		<div class="row">
+
+			<!-- firstname -->
+			<div class="mt-2 mb-2 col-lg-12 col-12">
+				<input type="text" formControlName="name" class="form-control" placeholder="Name">
+
+				<!-- display error start  -->
+				<div *ngIf="name.invalid && (name.touched || name.dirty)">
+					<span class="error" *ngIf="name.errors?.required">*El campo Nombre es
+						Requerido.</span>
+					<span class="error" *ngIf="name.errors?.pattern"> *Por favor sólo letras.</span>
+				</div>
+				<!-- display error end  -->
+			</div>
+
+			<!-- Email -->
+			<div class="mt-2 mb-2 col-lg-12 col-12">
+				<input type="text" formControlName="email" class="form-control" placeholder="Email">
+				<!-- display error start  -->
+				<div *ngIf="email.invalid && (email.touched || email.dirty)">
+					<span class="error" *ngIf="email.errors?.required"> *El campo Email es
+						Requerido.</span>
+					<span class="error" *ngIf="email.errors?.email"> *La dirección de Email no es
+						válida.
+					</span>
+				</div>
+				<!-- display error end  -->
+			</div>
+			<!-- Comentarios -->
+			<!-- <div class="mt-2 mb-2 col-lg-12 col-12">
+				<div class="blockquote">
+					Comentarios:
+				</div>
+
+				<textarea cols="50" rows="2" formControlName="text"></textarea>
+				<small>{{text.value.length}}/30</small>
+
+				<div *ngIf="text.errors && text.touched">
+					<span class="error" *ngIf="text.errors?.required"> *El campo Texto es
+						Requerido.</span>
+					<p class="error" *ngIf="text.errors?.maxlength">
+						*Te pasaste, máximo deben haber 80 caracteres.
+					</p>
+
+				</div> -->
+		</div>
+		<!-- submit -->
+		<div class="mt-2 col-lg-12 col-12">
+			<button class="btn btn-outline-secondary" [disabled]="form.invalid">Enviar</button>
+		</div>
+
+	</form>
+</div>

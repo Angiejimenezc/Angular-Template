@@ -1,0 +1,14 @@
+.title {
+  font-size: 3rem;
+  color: #547a52;
+}
+
+@media (min-width: 1200px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+.rk-menu {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
